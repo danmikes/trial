@@ -1,0 +1,139 @@
+:root {
+  --black: #111;
+  --dark: #222;
+  --grey: #333;
+  --white: #FFF;
+  --light: #EEE;
+  --cyan-dark: #048;
+  --cyan: #08F;
+  --magenta-dark: #408;
+  --magenta: #80F;
+  --yellow-dark: #840;
+  --yellow: #F80;
+  color-scheme: dark light;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--dark);
+  color: var(--yellow);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background-color: var(--dark);
+  color: var(--yellow);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 1rem;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+section {
+  background: var(--black);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  color: var(--magenta);
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+h2 {
+  color: var(--magenta-dark);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+h3 {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.button-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.spacer {
+  background: var(--black);
+  visibility: hidden;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  min-height: 60px§;
+}
+
+hr {
+  background: var(--grey);
+  height: 2px;
+  border: none;
+}
+
+.button-grid a {
+  align-items: center;
+  aspect-ratio: 1;
+  background: var(--grey);
+  border-radius: 12px;
+  border: 1px solid transparent;
+  color: var(--yellow);
+  display: flex;
+  font-size: 0.8rem;
+  font-weight: 500;
+  justify-content: center;
+  min-height: 60px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.button-grid a:active {
+  background: var(--cyan);
+  color: var(--white);
+  transform: scale(0.95);
+}
+
+@media (hover: hover) {
+  .button-grid a:hover {
+    background: var(--cyan);
+    color: var(--white);
+    transform: scale(1.2);
+  }
+}
