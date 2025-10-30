@@ -5,7 +5,7 @@ networks:
 services:
   traefik:
     image: traefik:v3.3
-    networks: 
+    networks:
       - traefik-net
     command:
       - --providers.docker=true
@@ -24,7 +24,7 @@ services:
       - ./certificates:/certificates
 
   flask:
-    image: ghcr.io/danmikes/raspi:latest
+    image: ghcr.io/danmikes/trial:latest
     pull_policy: always
     networks:
       - traefik-net
@@ -49,5 +49,5 @@ services:
       - traefik.http.routers.flask-http.rule=Host(`dmikes.duckdns.org`)
       - traefik.http.routers.flask-http.entrypoints=web
       - traefik.http.routers.flask-http.middlewares=redirect-to-https
-      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https 
+      - traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https
       - traefik.http.services.flask.loadbalancer.server.port=5000

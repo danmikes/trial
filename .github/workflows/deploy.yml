@@ -55,7 +55,7 @@ jobs:
         host: ${{ secrets.PI_HOST }}
         username: ${{ secrets.PI_USER }}
         key: ${{ secrets.PI_KEY }}
-        script: mkdir -p ~/raspi
+        script: mkdir -p ~/trial
         port: 22
         timeout: 10m
 
@@ -65,8 +65,8 @@ jobs:
         host: ${{ secrets.PI_HOST }}
         username: ${{ secrets.PI_USER }}
         key: ${{ secrets.PI_KEY }}
-        source: "app.py,requirements.txt,docker-compose.yml"
-        target: "~/raspi/"
+        source: "app.py,requirements.txt,docker-compose.yml,Dockerfile"
+        target: "~/trial/"
         strip_components: 1
         port: 22
         timeout: 15m
@@ -82,7 +82,7 @@ jobs:
           cd ~/trial
           docker compose pull flask
           docker compose up -d --no-deps flask
-          docker system prune -f --filter label=com.docker.compose.project=docker --filter label=com.docker.compose.service=flask
+          docker system prune -f --filter label=com.docker.compose.project=trial --filter label=com.docker.compose.service=flask
         port: 22
         timeout: 15m
         command_timeout: 30m
