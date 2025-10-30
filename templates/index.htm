@@ -5,14 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Link | home</title>
   <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}"></style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@pico@1/css/pico.min.css">
 </head>
 <body>
-  <h1>Links</h1>
-  <div id="buttonGrid" class="button-grid">
-    <!-- Buttons generate here -->
-  </div>
-  <h2>Daniel Mikes</h2>
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <main class="container">
+    <h1>Links</h1>
+
+    <div class="grid">
+      <section class="s12 m6 l4">
+        <h3>LINK</h3>
+        <div class="button-grid">
+          <a href="https://danmikes.github.io/consult">Consult</a>
+          <a href="https://danmikes.github.io/folio">Folio</a>
+          <a href="https://github.com/danmikes">GitHub</a>
+          <a href="https://linkedin.com/in/dmikes">LinkedIn</a>
+          <a href="https://leesmanifest.nl">Manifest</a>
+          <a href="https://researchgate.net/profile/daniel-mikes">Research</a>
+          <a href="https://samsim.onrender.com">SamSim</a>
+          <a href="https://dmikes.duckdns.org">Trial</a>
+          <a href="https://dmikes.eu.pythonanywhere.com">Wish</a>
+        </div>
+      </section>
+
+      <section class="s12 m6 l4">
+        <h3>APP</h3>
+        <div class="button-grid">
+          <a href="vscode://file/Users/dan/app/_pyany">_PyAny</a>
+          <a href="vscode://file/Users/dan/app/_raspi">_Raspi</a>
+          <a href="vscode://file/Users/dan/app/_render">_Render</a>
+          <a href="vscode://file/Users/dan/app/consult">Consult</a>
+          <a href="vscode://file/Users/dan/app/danmikes">DanMikes</a>
+          <a href="vscode://file/Users/dan/app/forum">Forum</a>
+          <a href="vscode://file/Users/dan/app/samsim">SamSim</a>
+          <a href="vscode://file/Users/dan/app/trial">Trial</a>
+          <a href="vscode://file/Users/dan/app/wish">Wish</a>
+        </div>
+      </section>
+
+      <section class="s12 m6 l4">
+        <h3>GIT</h3>
+        <div class="button-grid">
+          <a href="https://github.com/danmikes/consult">Consult</a>
+          <a href="https://github.com/danmikes/folio">Folio</a>
+          <a href="https://github.com/danmikes/danmikes">GitHub</a>
+          <a href="https://github.com/danmikes/samsim">SamSim</a>
+          <a href="https://github.com/danmikes/trial">Trial</a>
+          <a href="https://github.com/danmikes/wish">Wish</a>
+          <a href="https://github.com/danmikes/samsim">SamSim</a>
+        </div>
+      </section>
+
+      <section>
+        <h3>SCRIPT</h3>
+      <section class="s12 m6 l3">
+          <a href="#" data-script="/Users/dan/cache.sh">Cache</a>
+          <a href="#" data-script="/Users/dan/venv.sh">Venv</a>
+          <a href="#" data-script="/Users/dan/sync.sh">Sync</a>
+        </div>
+      </section>
+    </div>
+
+    <h2>Daniel Mikes</h2>
+  </main>
+
+  <script>
+    document.querySelectorAll('.button-grid a').forEach(a => {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+  </script>
 </body>
 </html>
