@@ -1,9 +1,69 @@
 body {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 100vh;
   margin: 0;
-  color: yellow;
+  min-height: 100vh;
+  padding: 0.2rem;
+  width: 100%;
+}
+
+.button-grid {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+}
+
+@media (min-width: 487px) {
+  .button-grid {
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .button-grid {
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.url-button {
+  align-items: center;
+  background: #222;
+  border-radius: 8px;
+  border: 2px solid darkorange;
+  color: orange;
+  display: flex;
+  font-size: x-large;
+  font-weight: bold;
+  height: 150px;
+  justify-content: center;
+  min-width: 0;
+  text-decoration: none;
+  width: 100%;
+}
+
+.url-button:hover {
+  background: #333;
+  box-shadow: 0 4px rgba(255,255,0,0.3);
+  transform: scale(1.1);
+}
+
+h1 {
+  color: orange;
+  font-size: xxx-large;
+  margin: 20px 0;
+  text-align: center;
+  width: 100;
+}
+
+h2 {
+  color: orange;
+  font-size: xx-large;
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
 }

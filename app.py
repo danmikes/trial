@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  return render_template('/index.htm')
+  return render_template('index.htm')
 
 @app.route('/health')
 def health_check():
